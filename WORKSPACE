@@ -11,9 +11,10 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_python/releases/download/0.3.0/rules_python-0.3.0.tar.gz",
 )
 
-load("@rules_python//python:pip.bzl", "pip_install")
+#TODO clean up dead code
+#load("@rules_python//python:pip.bzl", "pip_install")
 
-pip_install(
+#pip_install(
     # (Optional) You can provide extra parameters to pip.
     # Here, make pip output verbose (this is usable with `quiet = False`).
     #extra_pip_args = ["-v"],
@@ -33,8 +34,17 @@ pip_install(
     #quiet = False,
 
     # Uses the default repository name "pip"
-    requirements = "//:requirements.txt",
+#    requirements = "//:requirements.txt",
+#)
+
+load("@rules_python//python:pip.bzl", "pip_parse")
+
+pip_parse(
+    name = "mkdocs_deps",
+    requirements_lock = "//:requirements.txt"
 )
+load("@mkdocs_deps//:requirements.bzl", "install_deps")
+install_deps()
 
 http_archive(
     name = "rules_pkg",

@@ -1,6 +1,5 @@
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
-
-load("@pip//:requirements.bzl", "requirement")
+load("@mkdocs_deps//:requirements.bzl", "requirement")
 load("@rules_python//python:defs.bzl", "py_binary")
 load("@rules_python//python/pip_install:requirements.bzl", "compile_pip_requirements")
 
@@ -10,18 +9,19 @@ genrule(
     cmd = "echo -ne \"from mkdocs import __main__\n__main__.cli()\n\" > $@"
 )
 
+# To make this work, there is nothing you can do except go into external/mkdocs_deps_pypi__mkdocs_material_extensions/BUILD.bazel and make the extensions package _not_ depend on mkdocs-material to break the circular dependency...
+
 py_binary(
     name = "mkdocs",
     deps = [
         requirement("mkdocs"),
-        requirement("mkdocs-gitbook")
+        requirement("mkdocs-material")
+
     ],
     srcs = ["mkdocs_main.py"],
     main = "mkdocs_main.py",
-    data = ["mkdocs.yml"] + glob(["docs/*.md"])
+    data = ["mkdocs.yml"] + glob(["docs/**/*.md"])
 )
-
-#TODO let's do a sh_binary
 
 
 

@@ -1,3 +1,9 @@
+site_url: "http://localhost:8000/"
 site_name: "Blakeney Docs"
+repo_url: "https://github.com/alsenz/blakeney-docs"
 theme:
-  name: 'gitbook'
+  name: 'material'
+nav:
+  - Home: index.md
+  - 'Blakeney By Example':
+    - 'Hello World!': 'by-example/hello-world.md'
