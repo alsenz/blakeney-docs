@@ -12,10 +12,13 @@ genrule(
 
 py_binary(
     name = "mkdocs",
-    deps = [requirement("mkdocs")],
+    deps = [
+        requirement("mkdocs"),
+        requirement("mkdocs-gitbook")
+    ],
     srcs = ["mkdocs_main.py"],
     main = "mkdocs_main.py",
-    data = ["mkdocs.yml"] + glob(["docs/*.yml"])
+    data = ["mkdocs.yml"] + glob(["docs/*.md"])
 )
 
 #TODO let's do a sh_binary
