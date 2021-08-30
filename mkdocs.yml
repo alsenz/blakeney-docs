@@ -3,7 +3,54 @@ site_name: "Blakeney Docs"
 repo_url: "https://github.com/alsenz/blakeney-docs"
 theme:
   name: 'material'
+markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
 nav:
   - Home: index.md
   - 'Blakeney By Example':
     - 'Hello World!': 'by-example/hello-world.md'
+    - 'Variables': 'by-example/variables.md'
+    - 'Arithemetic': 'by-example/arithemtic.md'
+    - 'Globals': 'by-example/globals.md'
+    - 'Functions': 'by-example/functions.md'
+    - 'Classes': 'by-example/classes.md'
+    - 'Scopes': 'by-example/scopes.md'
+    - 'Const': 'by-example/const.md'
+    - 'Ref': 'by-example/ref.md'
+    - 'Copy': 'by-example/copy.md'
+    - 'Move': 'by-example/move.md'
+    - 'Autoconst': 'by-example/autoconst.md'
+    - 'Exceptions': 'by-example/exceptions.md'
+    - 'Tensors': 'by-example/tensors.md'
+    - 'Sum Types': 'by-example/sum-types.md'
+    - 'Variant Types': 'by-example/variant-types.md'
+    - 'Buffers': 'by-example/buffers.md'
+    - 'Lists': 'by-example/lists.md'
+    - 'Dicts': 'by-example/dicts.md'
+    - 'Sets': 'by-example/sets.md'
+    - 'Packages': 'by-example/packages.md'
+    - 'Dependencies': 'by-example/dependencies.md'
+    - 'Secure Coding': 'by-example/secure-coding.md'
+    - 'Calling C': 'by-example/calling-c.md'
+    - 'Actors': 'by-example/actors.md'
+    - 'Workers': 'by-example/workers.md'
+    - 'Promises': 'by-example/promises.md'
+    - 'Delegate': 'by-example/delegate.md'
+    - 'Share': 'by-example/share.md'
+    - 'Functional Programming': 'by-example/functional-programming.md'
+    - 'Currying': 'by-example/currying.md'
+    - 'Match': 'by-example/match.md'
+    - 'Blacksail': 'by-example/blacksail.md'
+    - 'Generics': 'by-example/generics.md'
+    - 'Metalanguage': 'by-example/metalanguage.md'
+    - 'Meta Classes': 'by-example/meta-classes.md'
+    - 'Meta Functions': 'by-example/meta-functions.md'
+    - 'Meta Compounds': 'by-example/meta-compounds.md'
+    - 'Meta Loops': 'by-example/meta-loops.md'
+    - 'Inline and ... Operator': 'by-example/inline-and-ellipsis-operator.md'
+    - 'Scriptable Compilation': 'by-example/scriptable-compilation.md'
