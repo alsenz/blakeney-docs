@@ -1,0 +1,3 @@
+Function variables - need to define semantics plus how they behave in the concurrency model... I think they're probably function references- and so can't be moved or copied
+
+Normal spread operator- should unpack tuple (meta spread should turn compile-time instances of operators into runtime code) 
