@@ -23,6 +23,14 @@ py_binary(
     data = ["mkdocs.yml"] + glob(["docs/**/*.md"])
 )
 
+genrule(
+    name = "mkdocs_package",
+    srcs = ["mkdocs.yml"] + glob(["docs/**/*.md"]),
+    outs = ["blakeney-docs.tar"],
+    tools = [":mkdocs"],
+    cmd = "./$(location :mkdocs) build -d mkdocs-out; pwd; tar -cvf $@ -C mkdocs-out ."
+)
+
 
 
 #TODO package up the docs

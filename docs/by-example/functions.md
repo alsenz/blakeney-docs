@@ -9,25 +9,27 @@ Function names must be `snake_case`.
 
 ## Example
 
-    package examples
-    
-    def plus(a: int, b: int) -> int:
-        return a + b
-    
-    def short_plus(a: int, b: int) => a + b
-    
-    def log_plus(a: int, b: int) -> void:
-        std.print("Result: %s", plus(a, b))
-     
-    def main() -> int:
-        result := short_plus(18, 24)
-        log_plus(result, 58)
-        
-        lambda_fn := lambda x: int, y: int => x + y
-        
-        std.print("Hopefully, %d != %d!", result, lambda_fn(19, 5))
-        
-        return 0
+```python
+package examples
+
+def plus(a: int, b: int) -> int:
+	return a + b
+
+def short_plus(a: int, b: int) => a + b
+
+def log_plus(a: int, b: int) -> void:
+	std.print("Result: %s", plus(a, b))
+ 
+def main() -> int:
+	result := short_plus(18, 24)
+	log_plus(result, 58)
+	
+	lambda_fn := lambda x: int, y: int => x + y
+	
+	std.print("Hopefully, %d != %d!", result, lambda_fn(19, 5))
+	
+	return 0
+```
 
 ##### Results
 
@@ -56,14 +58,21 @@ Function names must be `snake_case`.
 
 ## Example 2: Multiple return values
 
-Tuples and implicit conversion of tuples can be used to return multiple values from a function.
+Tuples and implicit tuple unpacking can be used to return multiple values from a function.
 
-    package examples
-    
-    def division_with_remainder(num: float, denom: int) -> (int, int):
-        return (4, 5) #TODO
+```python
+package examples
 
-Here,  
+def quotient_with_remainder(dividend: int, divisor: int) -> (int, int):
+	return (dividend / divisor, dividend % divisor)
+
+def main() -> int:
+	(quotient, remainder) := quotient_with_remainder(29482, 29)
+	std.print("The remainder when dividing 29482 by 29 is: %d", remainder)
+	return 0
+```
+
+Here, the `quotient_with_remainder` function returns a tuple of two integers. On line 7, tuple unpacking is used to store the two results of the function call as two variables: `quotient`, and `remainder`.
 
 
 ##### Related material
